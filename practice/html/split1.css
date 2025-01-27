@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    /* background-image: url('green1.png') ; */
+    background-color: #a4e3b0;
+    /* background-image: linear-gradient(to bottom,rgba(196, 13, 105, 0.2)); */
+    background-size: cover;
+}
+h1{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 0.4em;
+    /* font-family: Courier, Monaco, typewriter; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+.container{
+    margin:0% ;
+    width: 100%;
+    display:flex;
+    height: 80%;
+    max-width: 1200em;
+
+ 
+}
+
+.left-box{
+    width: 50%;
+    /* background-color: rgb(191, 236, 236); */
+}
+.right-box{
+    width: 50%;
+    text-align: right;
+    /* background-color: rgb(202, 197, 207); */
+}
+button{
+    position: relative;
+    margin: 0.4em;
+    padding: 1%;
+   color: rgb(255, 255, 255);
+    border-radius:10px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-color: rgb(0, 0, 0);
+    outline: 2em;
+    font-size: 1.6em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+button:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+p1{
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-size: 0.6em;
+    margin: 0.5em;
+    
+    
+}
+#groups{
+    font-size: 3em;
+}
+*{
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+p{
+    margin-top:5px;
+    padding-top: 5px;
+    margin-left: 0.3em;
+    /* font-family: 'Inconsolata', monospace; */
+    /* font-variant: small-caps; */
+    font-weight:bolder;
+    font-weight: 300;
+    font-size: 2em;
+    text-align:center;
+    /* display: flex; */
+}
+.container1{
+
+    width: 25em;
+    height: 17em;
+    background: rgb(255, 255, 255);
+    position: relative;
+    border: 2px solid #000000;
+    border-radius: 10px;  
+    /* position: absolute; */
+    top: 0%;
+    /* top: 50%; */
+    /* right: 0%; */
+    left: 50%;
+    /* left: 95%; */
+    transform: translate(-50%,-50%) scale(0.1);
+    align-items: center; 
+    text-align: center;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    /* padding: 3.5em; */
+}
+.open-popup {
+    position: fixed;
+    visibility: visible;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    /* Add any other styles you want here, such as width, height, background-color, etc. */
+}
+/* .open-popup{
+    position:-webkit-sticky;
+   
+    margin-top: 15em;
+    top: 70%;
+    transform: translate(-50%,-50%) scale(1);
+} */
+.create{
+    margin-top: 0.6em;
+    padding: 5px 40px 5px 40px;
+    border-radius: 5px;
+    box-shadow: white;
+    border-color: white;
+    font-weight: 500;
+    font-size: 1.3em;
+    background: #298967;
+    color: white;
+    justify-content: end;
+    align-content: end;
+    cursor:pointer;
+    /* transition: background-color 0.5s ease, color 0.5s ease; */
+}
+
+.cancel{
+    padding: 5px 40px 5px 40px;
+    font-weight: 500;
+    font-size: 1.3em;
+    background: #dc3545;
+    color: rgb(255, 255, 255);
+    border-color:white;
+    cursor:pointer;
+    border-radius: 5px;
+    box-shadow: none;
+    /* border: 1; */
+    justify-content:center;
+    align-content: center;
+    /* cursor:pointer; */
+    /* transition: background-color 0.5s ease, color 0.5s ease; */
+}
+.cancel:hover{
+    background-color: #c82333;
+    color: #ffffff;
+}
+.create:hover{
+    background-color: #4d9578;
+     color: #ffffff; */
+
+
+    }
+
+.pop-up{
+    margin-top: 10px;
+    font-size: larger;
+    /* font-family: 'Inconsolata', monospace; */
+    /* font-variant: normal;   */
+   
+   
+}
+#grp-name, #grp-type{
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 25px;
+}
+.group-details{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #298967;
+    margin-bottom: 10px;
+}
+#groups-list {
+    list-style: none;
+    padding: 0;
+    margin: 1em;
+    /* font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-size: 2em;
+    border: #000000;
+
+  }
+  
+  #groups-list a {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+  }
+  
+  #groups-list a:last-child {
+    border-bottom:#000000;
+  }
+  #groups-list a:hover {
+    background-color: #4d9578;
+    
+    cursor: pointer;
+  }
+  .group-list {
+    color: rgb(8, 2, 2);
+    font-size: 18px;
+    text-decoration: underline;
+  }

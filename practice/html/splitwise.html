@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member and Expense Manager</title>
+    <link rel="stylesheet" href="splitwise.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Member and Expense Manager</h1>
+
+    <div class="buttons">
+        <button id="addMemberBtn">Add Member</button>
+        <button id="addExpenseBtn">Add Expense</button>
+    </div>
+
+    <div id="memberList">
+        <h3>Members:</h3>
+        <ul id="members"></ul>
+    </div>
+
+    <div id="expenseList">
+        <h3>Expenses:</h3>
+        <ul id="expenses"></ul>
+    </div>
+</div>
+
+<!-- Member Popup -->
+<div id="memberPopup" class="popup">
+    <div class="popup-content">
+        <h2>Add Member</h2>
+        <input type="text" id="memberName" placeholder="Enter Name">
+        <input type="text" id="memberContact" placeholder="Enter Contact">
+        <button id="saveMemberBtn">Save Member</button>
+        <button class="close" onclick="closePopup('memberPopup')">Close</button>
+    </div>
+</div>
+
+<!-- Expense Popup -->
+<div id="expensePopup" class="popup">
+    <div class="popup-content">
+        <h2>Add Expense</h2>
+        <input type="number" id="expenseAmount" placeholder="Enter Amount">
+        <button id="saveExpenseBtn">Save Expense</button>
+        <button class="close" onclick="closePopup('expensePopup')">Close</button>
+    </div>
+</div>
+
+
+<script src="splitwise.js"></script>
+
+</body>
+</html>
+

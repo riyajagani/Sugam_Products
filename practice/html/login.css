@@ -1,0 +1,62 @@
+body{
+       display: flex;
+       background: url("img8.jpg") no-repeat;
+       background-size: cover;
+       background-position: center;
+        color: hsl(0, 19%, 93%);
+        display: flex;
+       justify-content: center ;
+       align-items: center;
+}
+input
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+#login
+{
+    box-shadow: 0 0 10px;
+    backdrop-filter: blur(10px);
+}
+
+
+#f
+{
+    text-align: center;
+}
+.login .input
+{
+    position: relative;
+    text-align: center;
+}
+.input input{
+    background: transparent;
+    border: 2px solid hsl(0, 17%, 93%) ;
+    border-radius :40px;
+    font-size: medium;
+    padding: 20px 45px 20px 20px;
+}
+.input input::placeholder{
+    color:rgb(239, 232, 232);
+    text-align: center;
+}
+.input i
+{
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+#forgot
+{
+    display: flex;
+    justify-content: center;
+    font-size: small;
+}
+#forgot a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+   

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey;">
+    <h1 style="text-align: center;">Login Form</h1>
+    <hr>
+   <!-- <table>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <h1>Login Form</h1>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">Enter your Name</label>
+                <input id="name" type="text" placeholder="Name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Enter your Email</label>
+                    <input id="email" type="text" placeholder="Email">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer id="footer" style="height: 100vh;">
+        <h3>This is footer</h3>
+        <a href="#footer">Take back to footer</a>
+    </footer>!-->
+    <center>
+    <form action="">
+        <div class="form-input">
+            <label for="name">Enter Name:</label>
+            <input type="name" id="name" required style="background-color: lightgray;">
+            <br>
+        </div>
+        <div class="form-input">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" required style="background-color: lightgray;">
+            <br>
+        </div>
+        <div>
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" required style="background-color: lightgray;">
+            <br>
+        </div>
+        <div>
+            <label for="checkage">Are you 18 years old?</label>
+            <input type="checkbox" id="checkage" required style="background-color: lightgray;">
+            <br>
+        </div>
+        <div class="form-input">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required style="background-color: lightgray;">
+            <br>
+            <input type="file" id="file" name="filename" style="background-color: lightgray;" required>
+            <br>
+            <button type="submit" style="background-color: lightgray;">Submit</button>
+        </div>
+        
+        <hr>
+    </center>
+        <style>
+            
+            input[type=email],input[type=password],input[type=name],input[type=date]
+            {
+                width: 20%;
+                padding: 4px;
+                margin: 8px;
+                display: inline-block;
+                box-sizing: border-box;
+            }
+            button
+            {
+                background-color: lightgray;
+                color: black;
+                cursor: pointer;
+                margin: 8px;
+            }
+            button:hover
+            {
+                opacity: 0.8;
+            }
+            input[type=checkbox],input[type=file]
+            {
+                padding: 4px;
+                margin: 8px;
+            }
+            
+        </style>
+
+    </form>
+</body>
+</html>

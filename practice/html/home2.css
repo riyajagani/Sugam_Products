@@ -1,0 +1,84 @@
+/* Reset some default browser styles */
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* General body styling */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #5fa393 50%, #aeeea9 50%);
+    justify-content: center;
+    align-items: center;
+}
+
+/* General container styling */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Left and right boxes */
+.box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/* Specific styling for left and right boxes */
+.left-box {
+    background-color:#185243 ; /* Light Yellow */
+}
+
+.right-box {
+    background-color: #74b97b; /* Light Blue */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Button styles */
+.btn {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.track-btn {
+    box-shadow: 0 5px 15px rgba(169, 222, 177, 0.5);
+}
+
+.split-btn {
+    box-shadow: 0 5px 15px rgba(176, 224, 230, 0.5);
+}
