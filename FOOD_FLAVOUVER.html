@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Flavours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #b1782a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .product:hover {
+            transform: scale(1.05);
+        }
+        
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .product-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        
+        .product-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .product-info button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ice Cream Flavours</h1>
+    </header>
+
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="apple-flaver.png">
+                <div class="product-info">
+                    <h3>Apollo Apple Flavour</h3>
+                    <p>Starting price : Rs 110 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="mixed-flaver.png">
+                <div class="product-info">
+                    <h3>Mixed Fruit Flavour</h3>
+                    <p>Starting price : Rs 100 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="zeera-flaver.png" alt="Product 3">
+                <div class="product-info">
+                    <h3>Zeera Flavored Soda</h3>
+                    <p>Starting price : Rs 130 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="peaach-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Peach Soft Drink Flavou</h3>
+                    <p>Starting price : Rs 90 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="coconut-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Khopra flavour essence</h3>
+                    <p>Starting price : Rs 70 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="falsa-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Falsa Cold drinks Flavour</h3>
+                    <p>Starting price : Rs 210 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="coconut-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Khopra flavour essence</h3>
+                    <p>Starting price : Rs 70 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="mixed-flaver.png">
+                <div class="product-info">
+                    <h3>Mixed Fruit Flavour</h3>
+                    <p>Starting price : Rs 100 / pkt</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
