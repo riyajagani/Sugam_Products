@@ -22,7 +22,7 @@
         /* Main container styles */
         .products {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 100px auto 0;
             position: relative;
         }
 
@@ -75,16 +75,21 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            margin: 60px auto 0;
+            max-width: 1200px;
         }
 
         .product::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -60px;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 200px;
             background: linear-gradient(135deg, rgba(168, 192, 255, 0.2), rgba(142, 45, 226, 0.2));
+            z-index: -1;
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            transform: scaleX(1.5);
             opacity: 0;
             transition: all 0.4s ease;
         }
@@ -203,17 +208,68 @@
                 font-size: 0.8rem;
             }
         }
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+            align-items: center;
+            width: 100%;
+            position: fixed; /* Fix navbar to top */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+            border-bottom: 2px solid yellow;
+        }
+
+        /* Add responsive design */
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 5px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
+    <section>
+        <nav class="navbar">
+            <a href="Sugam.html">Home</a>
+            <a href="OurProducts.html">Shop</a>
+            <a href="viewcart.html" class="active">Cart</a>
+        </nav>
+    </section>
     <section class="products">
-        <h1>Our Products</h1>
+        <h1><p>Our Products</p></h1>
         <div class="all-products">
             <div class="product">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJCrj-ToCDkCM85_CfGDJPcXqmCc6RSWF4Q&s" alt="Soft Drink Flavours">
                 <div class="product-info">
                     <h4 class="product-title">Soft Drink Flavours</h4>
-                    <a href="softdrink.html" class="product-btn">Explore Products</a>
+                    <a href="SoftDrinkFlavour.html" class="product-btn">Explore Products</a>
                 </div>
             </div>
             
@@ -221,7 +277,7 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWmqtKH7_-QcFLwrcGCL35fhi9AjMPj3LLRQ&s" alt="Food Flavours">
                 <div class="product-info">
                     <h4 class="product-title">Food Flavours</h4>
-                    <a href="FOOD_FLAVOUVER.html" class="product-btn">Explore Products</a>
+                    <a href="FoodFlavour.html" class="product-btn">Explore Products</a>
                 </div>
             </div>
             
