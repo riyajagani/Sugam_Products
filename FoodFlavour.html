@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Flavours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #b1782a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .product:hover {
+            transform: scale(1.05);
+        }
+        
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .product-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        
+        .product-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .product-info button:hover {
+            background-color: #218838;
+        }
+        .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    font-weight: bold;
+    border-bottom: 2px solid yellow;
+}
+
+    </style>
+</head>
+
+<body>
+ 
+    <nav class="navbar">
+        <a href="Sugam.html">Home</a>
+        <a href="#Our Product">Shop</a>
+        <a href="viewcart.html" class="active">Cart</a>
+    </nav>
+
+    <header>
+        <h1>Food Flavours</h1>
+    </header>
+
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="apple-flaver.png">
+                <div class="product-info">
+                    <h3>Apollo Apple Flavour</h3>
+                    <p>Starting price : Rs 110 / pkt</p>
+                    <button onclick="addToCart(1, 'Apollo Apple Flavour', 110, 'apple-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="mixed-flaver.png">
+                <div class="product-info">
+                    <h3>Mixed Fruit Flavour</h3>
+                    <p>Starting price : Rs 100 / pkt</p>
+                    <button onclick="addToCart(2, 'Mixed Fruit Flavour', 100, 'mixed-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="zeera-flaver.png" alt="Product 3">
+                <div class="product-info">
+                    <h3>Zeera Flavored Soda</h3>
+                    <p>Starting price : Rs 130 / pkt</p>
+                    <button onclick="addToCart(3, 'Zeera Flavored Soda', 130, 'zeera-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="peaach-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Peach Soft Drink flavour</h3>
+                    <p>Starting price : Rs 90 / pkt</p>
+                    <button onclick="addToCart(4, 'Peach Soft Drink flavour', 90, 'peaach-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="coconut-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Khopra flavour essence</h3>
+                    <p>Starting price : Rs 70 / pkt</p>
+                    <button onclick="addToCart(5, 'Khopra flavour essence', 70, 'coconut-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="falsa-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Falsa Cold drinks Flavour</h3>
+                    <p>Starting price : Rs 210 / pkt</p>
+                    <button onclick="addToCart(6, 'Falsa Cold drinks Flavour', 210, 'falsa-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="coconut-flaver.png" alt="Product 4">
+                <div class="product-info">
+                    <h3>Khopra flavour essence</h3>
+                    <p>Starting price : Rs 70 / pkt</p>
+                    <button onclick="addToCart(7, 'Khopra flavour essence', 70, 'coconut-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="mixed-flaver.png">
+                <div class="product-info">
+                    <h3>Mixed Fruit Flavour</h3>
+                    <p>Starting price : Rs 100 / pkt</p>
+                    <button onclick="addToCart(8, 'Mixed Fruit Flavour', 110, 'mixed-flaver.png')">Add to Cart</button>
+                </div>
+            </div>
+            <script src="viewcart.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

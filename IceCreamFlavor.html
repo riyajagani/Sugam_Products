@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Flavours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #d4bbd0;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .product-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .product-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .product-info button:hover {
+            background-color: #218838;
+        }
+        .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    font-weight: bold;
+    border-bottom: 2px solid yellow;
+}
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+<nav class="navbar">
+    <a href="Sugam.html">Home</a>
+    <a href="#Our Product">Shop</a>
+    <a href="viewcart.html" class="active">Cart</a>
+</nav>
+<header>
+    <h1>Ice Cream Flavours</h1>
+</header>
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://www.cookwithmanali.com/wp-content/uploads/2020/06/Kesar-Elaichi-Ice-Cream-Step-7.jpg" alt="Product 1">
+                <div class="product-info">
+                    <h3>Kesar Elaichi Ice Cream Flavour</h3>
+                    <p>Rs 780/lit</p>
+                    <button onclick="addToCart(1, 'Kesar-Elaichi Ice Cream Flavour', 780, 'https://www.cookwithmanali.com/wp-content/uploads/2020/06/Kesar-Elaichi-Ice-Cream-Step-7.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/5/CJ/GX/IP/3180617/minticecreamhero-color-corrected-df1d9b72aaeb41d38502f435fe99f65d-500x500.jpg" alt="Product 2">
+                <div class="product-info">
+                    <h3>Fudina Mint Ice Cream Flavour</h3>
+                    <p>Rs 1750/lit</p>
+                    <button onclick="addToCart(2, 'Fudina Mint Ice Cream Flavour', 1750, 'https://5.imimg.com/data5/SELLER/Default/2021/5/CJ/GX/IP/3180617/minticecreamhero-color-corrected-df1d9b72aaeb41d38502f435fe99f65d-500x500.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://moishi.com/cdn/shop/files/2024-06-14Moishi37017_1120x.jpg?v=1725280525" alt="Product 3">
+                <div class="product-info">
+                    <h3>Vimto Ice Cream Flavour</h3>
+                    <p>Rs 500/lit</p>
+                    <button onclick="addToCart(3, 'Vimto Ice Cream Flavour', 500, 'https://moishi.com/cdn/shop/files/2024-06-14Moishi37017_1120x.jpg?v=1725280525')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="https://images.squarespace-cdn.com/content/v1/603bc7becf34a07d765fc033/1621503279112-ACCI4DH6C2CBT4YG7YMV/mango+rabdi+icecream+dlp+%281%29.jpg?format=500w" alt="Product 4">
+                <div class="product-info">
+                    <h3>Fresh Rabdi Flavours</h3>
+                    <p>Rs 700/lit</p>
+                    <button onclick="addToCart(4, 'Fresh Rabdi Flavour', 700, 'https://images.squarespace-cdn.com/content/v1/603bc7becf34a07d765fc033/1621503279112-ACCI4DH6C2CBT4YG7YMV/mango+rabdi+icecream+dlp+%281%29.jpg?format=500w')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="https://www.dashofjazz.com/wp-content/uploads/2020/01/Dash-of-Jazz-Red-Wine-Sorbet-7-467x500.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Redwine Ice Cream Flavour</h3>
+                    <p>Rs 850/lit</p>
+                    <button onclick="addToCart(5, 'Redwine Ice Cream Flavour', 850, 'ttps://www.dashofjazz.com/wp-content/uploads/2020/01/Dash-of-Jazz-Red-Wine-Sorbet-7-467x500.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="https://www.rockrecipes.com/wp-content/uploads/2008/01/DSC_0223-1-of-1-3-1.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Rum Ice Cream Flavour</h3>
+                    <p>Rs 400/lit</p>
+                    <button onclick="addToCart(6, 'Rum Ice Cream Flavour', 400, 'https://www.rockrecipes.com/wp-content/uploads/2008/01/DSC_0223-1-of-1-3-1.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="https://www.thedeliciouscrescent.com/wp-content/uploads/2020/10/Saffron-Persian-Ice-Cream-5.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Saffron Ice Cream Flavour</h3>
+                    <p>Rs 600/lit</p>
+                    <button onclick="addToCart(7, 'Saffron Ice Cream Flavour', 600, 'https://www.thedeliciouscrescent.com/wp-content/uploads/2020/10/Saffron-Persian-Ice-Cream-5.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="https://2.wlimg.com/product_images/bc-full/2019/12/1396009/rajbhog-ice-cream-flavour-1576480071-5208628.jpeg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Rajbhog Ice Cream Flavour</h3>
+                    <p>Rs 650/lit</p>
+                    <button onclick="addToCart(8, 'Rajbhog Ice Cream Flavour', 650, 'https://2.wlimg.com/product_images/bc-full/2019/12/1396009/rajbhog-ice-cream-flavour-1576480071-5208628.jpeg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="https://media.hannaekelund.com/2022/02/IMG_0842-scaled.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Milk Chocolate Flavour</h3>
+                    <p>Rs 680/lit</p>
+                    <button onclick="addToCart(9, 'Milk chocolate Ice Cream Flavour', 680, 'https://media.hannaekelund.com/2022/02/IMG_0842-scaled.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-21953_12-c448d53.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Malt Chocolate Flavour</h3>
+                    <p>Rs 600/lit</p>
+                    <button onclick="addToCart(10, 'Mlat Ice Cream Flavour', 600, 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-21953_12-c448d53.jpg')">Add to Cart</button>
+                </div>
+            </div>
+            <script src="viewcart.js"></script>
+        </div>
+    </div>
+    
+</body>
+</html>
