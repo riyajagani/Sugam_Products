@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product Categories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #5a5a5a;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* Main container styles */
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, #f3e7ff 0%, #e7f0ff 100%);
+            z-index: -1;
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            transform: scaleX(1.5);
+        }
+
+        .products h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #6c5ce7;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .products h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #a8c0ff, #8e2de2);
+        }
+
+        /* Product grid layout */
+        .all-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        /* Individual product card styles */
+        .product {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(168, 192, 255, 0.2), rgba(142, 45, 226, 0.2));
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+        }
+
+        .product:hover::before {
+            opacity: 1;
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .product:hover img {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            color: #6c5ce7;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .product:hover .product-title {
+            color: #8e2de2;
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #a8c0ff, #8e2de2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .product-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
+        }
+
+        .product-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .products h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .all-products {
+                gap: 1.5rem;
+            }
+
+            .product-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .products h1 {
+                font-size: 1.75rem;
+            }
+
+            .product img {
+                height: 200px;
+            }
+
+            .product-info {
+                padding: 1rem;
+            }
+
+            .product-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="products">
+        <h1>Our Products</h1>
+        <div class="all-products">
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJCrj-ToCDkCM85_CfGDJPcXqmCc6RSWF4Q&s" alt="Soft Drink Flavours">
+                <div class="product-info">
+                    <h4 class="product-title">Soft Drink Flavours</h4>
+                    <a href="softdrink.html" class="product-btn">Explore Products</a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWmqtKH7_-QcFLwrcGCL35fhi9AjMPj3LLRQ&s" alt="Food Flavours">
+                <div class="product-info">
+                    <h4 class="product-title">Food Flavours</h4>
+                    <a href="FOOD_FLAVOUVER.html" class="product-btn">Explore Products</a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <img src="data:image/jpeg;base64,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" alt="Ice Cream Flavours">
+                <div class="product-info">
+                    <h4 class="product-title">Ice Cream Flavours</h4>
+                    <a href="IceCreamFlavor.html" class="product-btn">Explore Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
