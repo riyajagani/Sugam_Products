@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Darshan" PC ="INSPIRON 2in1">
     <title>Sugam Products - Quality Beverages & Ice Creams</title>
-    <link rel="stylesheet" href="sugam.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         * {
             margin: 0;
@@ -259,16 +257,6 @@
                 font-size: 2rem;
             }
         }
-        .carousel-item img {
-      height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-    .carousel-caption {
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      padding: 10px;
-    }
     </style>
 </head>
 <body>
@@ -280,61 +268,50 @@
             </div>
             <div class="contact-info">
                 <span>📞 08048966407</span>
+                <a href="mailto:contact@sugamproducts.com" class="contact-button">Send Email</a>
             </div>
         </div>
     </header>
 
     <nav class="nav">
         <ul>
-            <li><a href="OurProducts.html">Our Products</a></li>
-            <li><a href="ContactUs.html">Contact Us</a></li>
-            <li><a href="viewcart.html">View Cart</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#products">Our Products</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
-      
+
     <section class="hero">
         <h1>Refreshing Drinks & Delicious Ice Creams Flavours</h1>
         <p>Experience the finest quality beverages and frozen desserts</p>
     </section>
 
-    <div class="container mt-5">
-        
-        <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="ice-cream.png" class="d-block w-100" alt="Photo 1">
-              <div class="carousel-caption">
-                <h5>Ice Cream Flavour</h5>
-                <p>Indulge in rich, creamy ice cream flavors, that melt in your mouth with every scoop.</p>
-              </div>
+    <section class="products">
+        <h2>Our Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="fruitjuice.png" alt="Fruit Juice" class="product-image">
+                <div class="product-info">
+                    <h3>Fruit Juice Flavours</h3>
+                    <p>Natural and refreshing fruit juices in various flavors</p>
+                </div>
             </div>
-            <div class="carousel-item">
-              <img src="softdrinks.png" class="d-block w-100" alt="Photo 2">
-              <div class="carousel-caption">
-                <h5>Soft Drink Flavour</h5>
-                <p>Refresh yourself with fizzy soft drink flavors, bursting with tangy, fruity notes to quench your thirst..</p>
-              </div>
+            <div class="product-card">
+                <img src="ice-cream.png" alt="Ice Cream" class="product-image">
+                <div class="product-info">
+                    <h3>Ice Creams Flavours</h3>
+                    <p>Creamy and delicious ice creams in multiple flavors</p>
+                </div>
             </div>
-            <div class="carousel-item">
-              <img src="fruitjuice.png" class="d-block w-100" alt="Photo 3">
-              <div class="carousel-caption">
-                <h5>Food Flavour</h5>
-                <p>Enhance your culinary creations with aromatic food flavors.</p>
-              </div>
+            <div class="product-card">
+                <img src="softdrinks.png" alt="Soft Drinks" class="product-image">
+                <div class="product-info">
+                    <h3>Soft Drinks Flavours</h3>
+                    <p>Refreshing carbonated beverages for every occasion</p>
+                </div>
             </div>
-          </div>
-      
-          <!-- Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-      </div>
+    </section>
 
     <section class="categories">
         <div class="categories-container">
@@ -403,6 +380,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>     
+        
 </body>
 </html>
