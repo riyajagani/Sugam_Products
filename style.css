@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .nav-buttons {
     margin-left: 55%;
 }
@@ -39,7 +40,7 @@ h5 {
 }
 
 h6 {
-    color: #D8D8D8;
+    color: #d8d8d8;
 }
 
 button {
@@ -94,12 +95,14 @@ button:hover {
     .nav-buttons {
         margin: 10px;
     }
+
     .nav-buttons ul {
         margin: 1rem;
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
     }
+
     .nav-buttons ul .fas {
         margin: 20px 5px 10px 20px;
     }
@@ -125,7 +128,7 @@ button:hover {
 #home h1,
 h5,
 p {
-    color: #D8D8D8;
+    color: #6e2f2f;
 }
 
 #new .one img {
@@ -204,7 +207,7 @@ p {
 }
 
 #banner {
-    background-image: url('../imags/bag.png');
+    background-image: url('bag.png');
     width: 100%;
     height: 60vh;
     background-size: cover;
@@ -271,3 +274,212 @@ p {
     color: #D8D8D8;
     background-color: #b47a7a;
 } */
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus{
+    outline: none;
+}
+.single-product .buy-btn{
+    background-color: orange;
+    opacity: 1;
+    transition: 0.4s all;
+    color: white;
+}
+.single-product .buy-btn:hover{
+    background-color: #222222 ;
+    color: white;
+}
+/* cart */
+
+.cart table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+.cart .product-info{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.cart th{
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    background-color: orange;
+}
+
+.cart td{
+    padding: 10px 20px;
+
+}
+
+.cart td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cart td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px ;
+
+}
+.cart td a{
+    color: orange;
+     
+}
+.cart .remove-btn{
+    color: orange;
+    text-decoration: none;
+    font-size: 14px ;
+}
+.cart .edit-btn{
+    color: orange;
+    font-size: 15px;
+    text-decoration: none;
+}
+.cart .product-info p{
+    margin: 3px;
+
+}
+.cart-total{
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-total table{
+    width: 100%;
+    max-width: 500px;
+    border-top: 3px solid orange;
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+.checkout-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.checkout-btn{
+ 
+    background-color: orange;
+    color: white;
+
+}
+
+/* login */
+#login-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid orange;
+
+}
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#login-form #login-btn{
+    background-color: orange;
+    color: white;
+}
+#login-form #register-url{
+    color: orange;
+}
+
+/* register */
+#register-form{
+    width: 50%;
+        margin: 5px auto;
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid orange;
+}
+#register-form input{
+    width: 50%;
+        margin: 5px auto;
+}
+#register-form #register-btn{
+    background-color: orange;
+        color: white;
+}
+#register-form #login-url{
+    color: orange;
+}
+/* account */
+#account-form{
+    width: 50%;
+    margin: 55px;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+#account-form #change-pass-btn{
+    color: white;
+    background-color: orange ;
+}
+.account-info #orders-btn, #logout-btn{
+    color: orange;
+    text-decoration: none;
+}
+
+/* orders */
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+.orders th{
+
+    padding: 5px 10px;
+    color: white;
+    background-color: orange;
+    text-align: left;
+}
+.orders th:nth-child(2){
+    text-align: right;
+}
+.orders td{
+    padding: 10px 20px;
+
+}
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+/* checkout */
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+}
