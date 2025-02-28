@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -106,6 +106,14 @@
             <p>Here you can check out our featured products </p>
         </div>
         <div class="row max-auto container-fluid">
+        <?php
+            // Include the file that retrieves featured products
+            include 'server/getFeaturedProducts.php';?>
+
+            // Loop through the featured products and display them
+        <?php    while ($row = $featured_products->fetch_assoc()) { ?>
+                
+
             <div class="product text-center col-lg-3 col-md-4 col-sm-12">
                 <img class="img-fluid" src="ice-cream.png">
                 <div class="star">
@@ -119,48 +127,7 @@
                 <h4 class="p-price">80rs/pkt</h4>
                 <button class="buy-btn">BUY NOW</button>
             </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid" src="mixed.png">
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h5 class="p-name">Mixed Flavour</h5>
-                <h4 class="p-price">100rs/pkt</h4>
-                <button class="buy-btn">BUY NOW</button>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-120">
-                <img class="img-fluid" src="whiskey.png">
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h5 class="p-name">Whiskey</h5>
-                <h4 class="p-price">150rs/pkt</h4>
-                <button class="buy-btn">BUY NOW</button>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid" src="mngo.png">
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h5 class="p-name">Mango</h5>
-                <h4 class="p-price">180rs/pkt</h4>
-                <button class="buy-btn">BUY NOW</button>
-            </div>
+            <?php }?>
         </div>
         <hr>
     </section>
