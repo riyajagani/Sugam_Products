@@ -35,7 +35,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#">contact us</a>
+                        <a class="nav-link" href="contact.html">contact us</a>
                     </li>
                     <li class="nav-item">
                         <i class="fa-solid fa-cart-shopping"></i>
