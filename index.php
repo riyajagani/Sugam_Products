@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,12 +113,11 @@
             // Include the file that retrieves featured products
             include 'server/getFeaturedProducts.php';?>
 
-            // Loop through the featured products and display them
         <?php    while ($row = $featured_products->fetch_assoc()) { ?>
                 
 
             <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid" src="ice-cream.png">
+                <img class="img-fluid" src="<?php echo $row['product_image1']; ?>" alt="<?php echo $row['product_name']; ?>">
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -123,9 +125,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h5 class="p-name">Ice-Cream</h5>
-                <h4 class="p-price">80rs/pkt</h4>
-                <button class="buy-btn">BUY NOW</button>
+                <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+                <h4 class="p-price"><?php echo $row['product_price']; ?>rs/pkt</h4>
+               <a href=<?php echo "pineapple_softdrink.php?product_id=". $row['product_id'];?>><button class="buy-btn">BUY NOW</button></a> 
             </div>
             <?php }?>
         </div>

@@ -351,6 +351,9 @@ p {
     color: orange;
     text-decoration: none;
     font-size: 14px ;
+    background-color: white;
+    border: none;
+    width: 100%;
 }
 .cart .edit-btn{
     color: orange;
