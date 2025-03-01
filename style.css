@@ -357,8 +357,11 @@ p {
 }
 .cart .edit-btn{
     color: orange;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
+    background-color: white;
+    border: none;
+    
 }
 .cart .product-info p{
     margin: 3px;

@@ -1,47 +1,56 @@
 <?php
-    session_start();
-    if(isset($_POST['add_to_cart'])){
-        if(isset($_SESSION['Cart'])){
-            $products_array_ids = array_column($_SESSION['Cart'], "product_id");
-            if(!in_array($_POST['product_id'], $products_array_ids)) {
-                $product_id = $_POST['product_id'];
-                $product_array  = array(
-                    'product_id'=>$_POST['product_id'],
-                    'product_name'=>$_POST['product_name'],
-                    'product_price'=>$_POST['product_price'],
-                    'product_image1'=>$_POST['product_image1'],
-                    'product_quantity'=>$_POST['product_quantity'],
-                );
+session_start();
 
-                $_SESSION['Cart'][$product_id] = $product_array;
+if (!isset($_SESSION['Cart'])) {
+    $_SESSION['Cart'] = [];
+}
 
-            }else{
-                echo '<script>alert("Product was already added to cart");</script>';
-               
-            }
-        }else{
-            $product_id=$_POST['product_id'];
-            $product_name=$_POST['product_name'];
-            $product_price=$_POST['product_price'];
-            $product_image1=$_POST['product_image1'];
-            $product_quantity=$_POST['product_quantity'];
-
-            $product_array  = array(
-                'product_id'=>$product_id,
-                'product_name'=>$product_name,
-                'product_price'=>$product_price,
-                'product_image1'=>$product_image1,
-                'product_quantity'=>$product_quantity,
-            );
-
-            $_SESSION['Cart'][$product_id] = $product_array;
-        }
-    }else if(isset($_POST['remove_product'])){
-        $product_id = $_POST['product_id'];
-        unset($_SESSION['Cart'][$product_id]);
-    }else{
-        header('location: index.php');
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    if (!isset($_SESSION['Cart'][$product_id])) {
+        $_SESSION['Cart'][$product_id] = [
+            'product_id' => $product_id,
+            'product_name' => $_POST['product_name'],
+            'product_price' => $_POST['product_price'],
+            'product_image1' => $_POST['product_image1'],
+            'product_quantity' => $_POST['product_quantity'],
+        ];
+    } else {
+        echo '<script>alert("Product was already added to cart");</script>';
     }
+
+    calculateTotalCart();
+} elseif (isset($_POST['remove_product'])) {
+    $product_id = $_POST['product_id'];
+    unset($_SESSION['Cart'][$product_id]);
+    calculateTotalCart();
+} elseif (isset($_POST['edit_quantity'])) {
+    $product_id = $_POST['product_id'];
+    $product_quantity = $_POST['product_quantity'];
+
+    if (isset($_SESSION['Cart'][$product_id])) {
+        $_SESSION['Cart'][$product_id]['product_quantity'] = $product_quantity;
+    }
+
+    calculateTotalCart();
+} else {
+    header('location: index.php');
+    exit;
+}
+
+function calculateTotalCart()
+{
+    if (!isset($_SESSION['Cart']) || empty($_SESSION['Cart'])) {
+        $_SESSION['total'] = 0;
+        return;
+    }
+
+    $total = 0;
+    foreach ($_SESSION['Cart'] as $product) {
+        $total += $product['product_price'] * $product['product_quantity'];
+    }
+    $_SESSION['total'] = $total;
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +60,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -64,44 +69,26 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
     <div class="container">
-        <!-- add logo -->
-        <!-- <img src="assets/imags/logo.png" /> -->
         <a class="navbar-brand" href="#">SUGAM PRODUCTS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">contact us</a>
-                </li>
-                <li class="nav-item">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-solid fa-user"></i>
-                </li>
-
-
-
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                <li class="nav-item"><i class="fa-solid fa-cart-shopping"></i> <i class="fa-solid fa-user"></i></li>
+            </ul>
         </div>
     </div>
 </nav>
 
-
 <!-- cart -->
- <section class="cart container my-5 py-5">
+<section class="cart container my-5 py-5">
     <div class="container mt-5">
-        <h2 class="font-weight-bolde">Your Cart</h2>
+        <h2 class="font-weight-bold">Your Cart</h2>
         <hr>
         <table class="mt-5 pt-5">
             <tr>
@@ -110,87 +97,70 @@
                 <th>Subtotal</th>
             </tr>
 
-            <?php foreach($_SESSION['Cart'] as $key => $value){?>
-
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="<?php  echo $value['product_image1'];?>" >
-                        <div>
-                            <p><?php  echo $value['product_name'];?></p>
-                            <small><span> Rupees </span><?php  echo $value['product_price'];?></small>
-                            <br>
-                            <form action="Cart.php" method="POST">
-                                <input type="hidden" name="product_id" value="<?php echo $value['product_id']?>"/>
-                                <input class="remove-btn" type="submit" name="remove_product" value="remove"/>
-                            </form>
-                            
+            <?php foreach ($_SESSION['Cart'] as $value) { ?>
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="<?php echo $value['product_image1']; ?>" alt="Product Image">
+                            <div>
+                                <p><?php echo $value['product_name']; ?></p>
+                                <small>Rupees <?php echo $value['product_price']; ?></small>
+                                <br>
+                                <form action="Cart.php" method="POST">
+                                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                                    <input class="remove-btn" type="submit" name="remove_product" value="remove"/>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number" value="<?php  echo $value['product_quantity'];?>" >
-                    <!-- <a class="edit-btn" href="#">Edit</a> -->
-                </td>
-
-                <td>
-                    <span>Rupees</span>
-                    <span class="product-price"></span>
-                </td>
-                
-            </tr>
+                    </td>
+                    <td>
+                        <form method="POST" action="Cart.php">
+                            <input type="hidden" value="<?php echo $value['product_id']; ?>" name="product_id"/>
+                            <input type="number" name="product_quantity" value="<?php echo $value['product_quantity']; ?>">
+                            <input type="submit" class="edit_btn" value="edit" name="edit_quantity"/>
+                        </form>
+                    </td>
+                    <td>
+                        <span>₹</span>
+                        <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
+                    </td>
+                </tr>
             <?php } ?>
-            
+
         </table>
 
         <div class="cart-total">
             <table>
                 <tr>
-                    <td>Subtotal</td>
-                    <td>Rupees 200</td>
-                </tr>
-                <tr>
                     <td>Total Amount</td>
-                    <td>Rupees 200</td>
+                    <td>₹ <?php echo isset($_SESSION['total']) ? $_SESSION['total'] : 0; ?></td>
                 </tr>
             </table>
         </div>
-        
     </div>
 
     <div class="checkout-container">
-        <button class="btn checkout-btn">Checkout</button>
+        <form action="checkout.php" method="POST">
+            <input type="submit" class="btn checkout-btn" value="Checkout" name="checkout">
+        </form>
+        
     </div>
- </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</section>
 
 <footer class="footer">
     <div class="footer-content">
         <div>
             <h3>About Us</h3>
-            <p>Sugam Products specializes in manufacturing high-quality beverages and ice creams, delivering refreshing
-                experiences since establishment.</p>
+            <p>Sugam Products specializes in manufacturing high-quality beverages and ice creams.</p>
         </div>
         <div>
             <h3>Variety</h3>
             <ul>
-                <li>FOOD-FLAVOUR</li>
-                <li>ICE-CREAM FLAVOUR</li>
-                <li>SOFT-DRINK</li>
-                <LI>COLA SOFT-DRINK</LI>
-                <li>WHISKEY FLAVOUR</li>
+                <li>Food-Flavour</li>
+                <li>Ice-Cream Flavour</li>
+                <li>Soft-Drink</li>
+                <li>Cola Soft-Drink</li>
+                <li>Whiskey Flavour</li>
             </ul>
         </div>
         <div>
@@ -207,21 +177,12 @@
                 <li>Contact Us</li>
             </ul>
         </div>
-        <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2 ">
+        <div>
             <p>SugamProducts @ 2025 ALL Right Reserved</p>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </div>
 </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-    
 </html>
