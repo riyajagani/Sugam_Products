@@ -20,7 +20,7 @@ if(isset($_POST['place_order'])) {
     // Ensure 'total' exists in session
     $order_cost = $_SESSION['total'] ?? 0; 
     $order_status = "on_hold";
-    $user_id  = 1; 
+    $user_id  = 1; // This should be dynamically set based on the logged-in user
     $order_date = date('Y-m-d H:i:s');
 
     // Start transaction to ensure consistency
@@ -58,14 +58,14 @@ if(isset($_POST['place_order'])) {
             }
 
             // Loop through cart items and insert into order_items
-            foreach($_SESSION['Cart'] as $key => $product) {
-                if (!isset($product['product_id'], $product['product_name'], $product['product_image'], $product['product_price'], $product['product_quantity'])) {
-                    continue;
+            foreach($_SESSION['Cart'] as $product) {
+                if (!isset($product['product_id'], $product['product_name'], $product['product_image1'], $product['product_price'], $product['product_quantity'])) {
+                    continue; // Skip if any required field is missing
                 }
 
                 $product_id = $product['product_id'];
                 $product_name = $product['product_name'];
-                $product_image = $product['product_image'];
+                $product_image = $product['product_image1'];
                 $product_price = $product['product_price'];
                 $product_quantity = $product['product_quantity'];
 
