@@ -301,6 +301,9 @@ p {
     transition: 0.4s all;
     color: white;
 }
+.ice-cream { color: chocolate; }
+.soft-drink { color: blue; }
+
 .single-product .buy-btn:hover{
     background-color: #222222 ;
     color: white;

@@ -65,7 +65,12 @@ else
         <div class="col-lg-6 col-md-12 col-sm-12">
             <h6>Soft Drink</h6>
             <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
-            <h2><?php echo $row['product_price']; ?></h2>
+            
+            <?php
+    // Set the unit based on product category
+             $unit = ($row['product_category'] == 'Ice-Cream Flavours') ? 'Litre' : 'Box';
+             ?>
+             <h2><?php echo $row['product_price']; ?>/<?php echo $unit; ?></h2>
 
             <form method="POST" action="Cart.php">
             <input type="hidden" name="product_id" value="<?php echo $row['product_id'];?>"/>
@@ -77,7 +82,7 @@ else
             </form>
             
             <h4 class="mt-5 mb-5">Product Details</h4>
-            <span><?php echo $row['product_description']; ?></span>
+            <span><?php echo nl2br($row['product_description']);?> </span>
         </div>
             
         <?php } ?>
