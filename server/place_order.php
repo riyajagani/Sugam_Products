@@ -101,6 +101,9 @@ if(isset($_POST['place_order'])) {
     // Close statements and connection
     $stmt->close();
     $conn->close();
+
+    //unset($_SESSION['Cart']);
+    header('location: ../payment.php?order_status=Order Placed Successfully!');
 }
 
 ?>

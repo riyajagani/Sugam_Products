@@ -34,8 +34,8 @@ if (isset($_POST['add_to_cart'])) {
 
     calculateTotalCart();
 } else {
-    header('location: index.php');
-    exit;
+    // header('location: index.php');
+    //exit;
 }
 
 function calculateTotalCart()
