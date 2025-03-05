@@ -20,7 +20,7 @@ if(isset($_POST['place_order'])) {
     // Ensure 'total' exists in session
     $order_cost = $_SESSION['total'] ?? 0; 
     $order_status = "on_hold";
-    $user_id  = 1; // This should be dynamically set based on the logged-in user
+    $user_id  = $_SESSION['user_id']; // This should be dynamically set based on the logged-in user
     $order_date = date('Y-m-d H:i:s');
 
     // Start transaction to ensure consistency
