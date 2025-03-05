@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
             $stmt=$conn->prepare("INSERT INTO users (user_name,user_email,user_password)
                         VALUES (?,?,?)");
     
-            $stmt->bind_param('sss',$name,$email,md5($password));
+            $stmt->bind_param('sss',$name,$email,$password);
         
             if($stmt->execute()){
                 $_SESSION['user_email']=$email;
