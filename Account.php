@@ -145,8 +145,10 @@ if (isset($_SESSION['logged_in'])) {
                     <td><span><?php echo $row['order_status']; ?></span></td>
                     <td><span><?php echo $row['order_date']; ?></span></td>
                     <td>
-                        <form>
-                            <input class="btn order-details-btn" type="submit" value="details"/>
+                        <form method="GET" action="order_details.php">
+                            <input type="hidden" value="<?php echo $row['order_status'];?>" name="order_status"/>
+                            <input type="hidden" value="<?php echo $row['order_id'];?>" name="order_id"/>
+                            <input class="btn order-details-btn" name="order_details_btn" type="submit" value="details"/>
                         </form>
                     </td>
                 </tr>
