@@ -472,10 +472,10 @@ th:last-child{
     padding: 5px 10px;
     color: white;
     background-color: orange;
-    text-align: left;
+    /* text-align: left; */
 }
 .orders th:nth-child(2){
-    text-align: right;
+    /* text-align: right; */
 }
 .orders td{
     padding: 10px 20px;
@@ -485,6 +485,11 @@ th:last-child{
     width: 80px;
     height: 80px;
     margin-right: 10px;
+}
+.orders .order-details-btn
+{
+    color:white;
+    background-color: #d87731;
 }
 /* checkout */
 #checkout-form .checkout-small-element{
