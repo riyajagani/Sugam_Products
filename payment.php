@@ -18,23 +18,21 @@
     </div>
     <div class="mx-auto container text-center">
 
-        <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0 ){ ?>
-            <p>Total Payments: ₹<?php echo $_SESSION['total']; ?></p>
-        <p><?php if(isset($_GET['order_status'])) {echo $_GET['order_status'];}?></p>
-        
-        <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0){?>
-        <input class="btn btn-primary" value="Pay Now" type="submit"/>
-        
-        <?php } else {?>
-            
+
+
+        <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0 ) { ?>
+            <p>Total Payment: ₹<?php echo $_SESSION['total']; ?></p>
+            <input class="btn btn-primary" value="Pay Now" type="submit"/>
+            <?php } else if(isset($_POST['order_status']) && $_POST['order_status'] == "not paid" ) {?>
+                    <p>Total payment: ₹<?php echo $_POST['order_total_price'];?></p>
+                    <input class="btn btn-primary" value="Pay Now" type="submit"/>
+
+
+        <?php } else { ?>
             <p>You don't have any order</p>
         <?php } ?>
         
-        <p><?php if(isset($_POST['order_status'])){echo $_POST['order_status'];}?></p>
-
-        <?php if(isset($_POST['order_status']) && $_POST['order_status'] == "not paid"){?>
-        <input class="btn btn-primary" value="Pay Now" type="submit"/>
-        <?php }?>
+        
     </div>
 </section>
 
