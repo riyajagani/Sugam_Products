@@ -3,7 +3,14 @@
 session_start();
 include('connection.php'); 
 
-// Check if database connection is valid
+if(!isset($_SESSION['logged_in']))
+{
+    header('location: ../checkout.php?message=Please Login/Register to place an order');
+    exit;
+}
+else
+{
+
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
 }
@@ -17,13 +24,11 @@ if(isset($_POST['place_order'])) {
     $city = $_POST['city'];
     $address = $_POST['address'];
 
-    // Ensure 'total' exists in session
     $order_cost = $_SESSION['total'] ?? 0; 
     $order_status = "not paid";
     $user_id  = $_SESSION['user_id']; // This should be dynamically set based on the logged-in user
     $order_date = date('Y-m-d H:i:s');
 
-    // Start transaction to ensure consistency
     $conn->begin_transaction();
 
     try {
@@ -37,10 +42,10 @@ if(isset($_POST['place_order'])) {
 
         // Bind parameters
         $stmt->bind_param('dsiisss', $order_cost, $order_status, $user_id, $phone, $city, $address, $order_date);
-
-        // Execute query
-        if (!$stmt->execute()) {
-            throw new Exception("Error placing order: " . $stmt->error);
+        $stmt_status = $stmt->execute();
+        if(!$stmt_status){
+            header('location: index.php');
+            exit;
         }
 
         // Get the generated order_id
@@ -93,17 +98,19 @@ if(isset($_POST['place_order'])) {
         unset($_SESSION['Cart']);
 
     } catch (Exception $e) {
-        // Rollback the transaction in case of an error
+       
         $conn->rollback();
         echo "Error: " . $e->getMessage();
     }
 
-    // Close statements and connection
+ 
     $stmt->close();
     $conn->close();
 
-    //unset($_SESSION['Cart']);
-    header('location: ../payment.php?order_status=Order Placed Successfully!');
-}
+  
+    header('Location: ../payment.php?order_status=order placed  successfully');
+exit();
 
+}
+}
 ?>

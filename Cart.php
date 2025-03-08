@@ -53,37 +53,7 @@ function calculateTotalCart()
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">SUGAM PRODUCTS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-                <li class="nav-item"><i class="fa-solid fa-cart-shopping"></i> <i class="fa-solid fa-user"></i></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php include('header.php');?>
 
 <!-- cart -->
 <section class="cart container my-5 py-5">
@@ -147,42 +117,4 @@ function calculateTotalCart()
     </div>
 </section>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>About Us</h3>
-            <p>Sugam Products specializes in manufacturing high-quality beverages and ice creams.</p>
-        </div>
-        <div>
-            <h3>Variety</h3>
-            <ul>
-                <li>Food-Flavour</li>
-                <li>Ice-Cream Flavour</li>
-                <li>Soft-Drink</li>
-                <li>Cola Soft-Drink</li>
-                <li>Whiskey Flavour</li>
-            </ul>
-        </div>
-        <div>
-            <h3>Contact</h3>
-            <p>Metoda, Rajkot, Gujarat</p>
-            <p>Phone: 08048966407</p>
-            <p>GST No. 24ABZFS3887K1Z3</p>
-        </div>
-        <div>
-            <h3>Quick Links</h3>
-            <ul>
-                <li>Profile</li>
-                <li>Products</li>
-                <li>Contact Us</li>
-            </ul>
-        </div>
-        <div>
-            <p>SugamProducts @ 2025 ALL Right Reserved</p>
-        </div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php include('footer.php');?>

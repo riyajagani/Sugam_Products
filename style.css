@@ -190,11 +190,34 @@ p {
 }
 
 .product img {
-    transition: 0.3s ease;
+    transition: 0.3s all;;
 }
 
 .product:hover img {
     opacity: 0.7;
+}
+
+.product .buy-btn
+{
+    background-color: orange;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s all;;
+    color:white;
+}
+.shop-buy-btn
+{
+    background-color: orange;
+    opacity: 1;
+    color:white;
+    text-decoration:none ;
+}
+.buy-btn
+{
+    background-color: orange;
+    opacity: 1;
+    color:white;
+    text-decoration:none ;
 }
 
 .star {
