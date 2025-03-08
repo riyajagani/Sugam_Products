@@ -28,18 +28,18 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
+                        <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">contact us</a>
+                        <a class="nav-link" href="contact.php">Contact us</a>
                     </li>
                     <li class="nav-item">
                       <a href="Cart.php"> <i class="fa-solid fa-cart-shopping"></i></a>
-                      <a href="Account.html"><i class="fa-solid fa-user"></i></a>
+                      <a href="Account.php"><i class="fa-solid fa-user"></i></a>
                     </li>
 
 

@@ -214,10 +214,11 @@ p {
 }
 .buy-btn
 {
-    background-color: orange;
-    opacity: 1;
-    color:white;
+    background-color: orange ;
+    opacity: 1 !important ;
+    color:white ;
     text-decoration:none ;
+    
 }
 
 .star {

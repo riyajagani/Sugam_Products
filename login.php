@@ -1,8 +1,12 @@
 
 <?php
+    include('header.php');
+?>
+<?php
 
 session_start();
 include('server/connection.php');
+
 if(isset($_POST['login_btn'])){
 
     $email = $_POST['email'];
