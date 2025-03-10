@@ -214,11 +214,10 @@ p {
 }
 .buy-btn
 {
-    background-color: orange ;
-    opacity: 1 !important ;
-    color:white ;
+    background-color: orange;
+    opacity: 1;
+    color:white;
     text-decoration:none ;
-    
 }
 button, .btn, .checkout-btn, .order-details-btn {
     display: inline-block !important;
