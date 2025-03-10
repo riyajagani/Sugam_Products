@@ -17,6 +17,8 @@
         $order_details=$stmt->get_result();
         $order_total_price=calculateTotalorderprice($order_details);
     }
+
+    
     else{
        header('location: Account.php'); 
        exit;

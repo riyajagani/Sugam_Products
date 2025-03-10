@@ -76,9 +76,9 @@ if(isset($_POST['place_order'])) {
 
                 // Bind parameters and execute for each item
                 $stmt1->bind_param('iissdiss', $order_id, $product_id, $product_name, $product_image, $product_price, $product_quantity, $user_id, $order_date);
-                
-                if (!$stmt1->execute()) {
-                    throw new Exception("Error inserting order item: " . $stmt1->error);
+                $stmt_status = $stmt->execute();
+                if (!$stmt_status) {
+                    header('location: index.php');
                 }
             }
 
