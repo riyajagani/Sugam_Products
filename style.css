@@ -219,6 +219,28 @@ p {
     color:white;
     text-decoration:none ;
 }
+button, .btn, .checkout-btn, .order-details-btn {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.checkout-btn {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.order-details-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9c4507;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 .star {
     padding: 10px 0;

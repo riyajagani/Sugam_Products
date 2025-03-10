@@ -7,15 +7,39 @@
     if( isset($_GET['order_id'])){
         $order_id = $_GET['order_id'];
         $order_status = $_GET['order_status'];
-        $stmt=$conn->prepare("SELECT * FROM order_items WHERE order_id = ?");
+        $stmt = $conn->prepare("SELECT order_items.*, products.product_name, products.product_image1 
+        FROM order_items 
+        JOIN products ON order_items.product_id = products.product_id 
+        WHERE order_items.order_id = ?");
+
         $stmt->bind_param('i',$order_id);
         $stmt->execute();
         $order_details=$stmt->get_result();
+        $order_total_price=calculateTotalorderprice($order_details);
     }
     else{
        header('location: Account.php'); 
        exit;
     }
+
+
+function calculateTotalorderprice($order_details)
+{
+    if (!isset($_SESSION['Cart']) || empty($_SESSION['Cart'])) {
+        $_SESSION['total'] = 0;
+        return;
+    }
+
+    $total = 0;
+    foreach($order_details as $row){
+       $product_price= $row['product_price'];
+       $product_quantity=$row['product_quantity'];
+
+      $total=$total+($product_price*$product_quantity);
+    }
+   return $total;
+   
+}
 
 ?>
 
@@ -33,18 +57,18 @@
                     <th>Quantity</th>
                     
                 </tr>
-            <?php while($row = $order_details->fetch_assoc()){?>
+            <?php foreach( $order_details as $row){?>
                 <tr>
                     <td>
                         <div class="product-info">
-                            <img src="<?php echo $row['product_image']?>">
+                            <img src="<?php echo $row['product_image1'];?>"/>
                             <div>
                                 <p class="mt-3"><?php echo $row['product_name']?></p>
                             </div>
                         </div>
                         
                     </td>
-                    <td><span><?php echo $row['product_price']?></span></td>
+                    <td><span>Ruppees <?php echo $row['product_price']?></span></td>
                     <td><span><?php echo $row['product_quantity']?></span></td>
                     
                     
@@ -56,9 +80,12 @@
                 
             <?php if($order_status == "not paid"){?>
 
-                <form style = "float:right;" action="">
-                    <input type="submit" class="btn btn-primary" value="Pay Now"/>
+                <form  action="payment.php" method="POST">
+                    <input type="hidden" name="order_total_price"value="<?php echo $order_total_price; ?>"/>
+                    <input type="hidden" name="order_status" value="<?php echo $order_status;?>"/>
+                    <input type="submit" name="order_pay_btn" class="btn buy-btn" value="Pay Now"/>
                 </form>
+                <!-- <input type="submit" class="btn btn-primary" value="Pay Now"/> -->
 
             <?php } ?>
 
