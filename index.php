@@ -31,7 +31,7 @@
                 <img class="img-fluid" src="falsa.png">
                 <div class="details">
                     <h2>Fruit-Juice Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <a href="FruitJuiceFlavours.php" class="button">BUY NOW</a>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                 <img class="img-fluid" src="ice-cream.png">
                 <div class="details">
                     <h2>Ice-Cream Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <a href="IceCreamFlavours.php" class="button">BUY NOW</a>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                 <img class="img-fluid" src="soft-drink.png">
                 <div class="details">
                     <h2>Soft-Drink Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <a href= "SoftDrinkFlavours.php" class="button">BUY NOW</a>
                 </div>
             </div>
 
