@@ -30,7 +30,7 @@ include('header.php');
                 <img class="img-fluid" src="falsa.png">
                 <div class="details">
                     <h2>Fruit-Juice Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <button  class="text-uppercase"><a href="FruitJuiceFlavours.php">BUY NOW</a></button>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@ include('header.php');
                 <img class="img-fluid" src="ice-cream.png">
                 <div class="details">
                     <h2>Ice-Cream Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <button  class="text-uppercase"><a href="IceCreamFlavours.php">BUY NOW</a></button>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@ include('header.php');
                 <img class="img-fluid" src="soft-drink.png">
                 <div class="details">
                     <h2>Soft-Drink Flavours</h2>
-                    <button class="text-uppercase">BUY NOW</button>
+                    <button  class="text-uppercase"><a href="SoftDrinkFlavours.php">BUY NOW</a></button>
                 </div>
             </div>
 
