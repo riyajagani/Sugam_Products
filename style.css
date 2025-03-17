@@ -344,6 +344,18 @@ button, .btn, .checkout-btn, .order-details-btn {
     flex-basis: 24%;
     cursor: pointer;
 }
+.product img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+.img-fluid {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+}
+
 
 .single-product input{
     width: 50px;
