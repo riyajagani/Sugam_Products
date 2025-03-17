@@ -65,8 +65,8 @@ include('server/connection.php');
                         <a class="nav-link" href="contact.php">contact us</a>
                     </li>
                     <li class="nav-item">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-solid fa-user"></i>
+                    <a href="Cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="Account.php"><i class="fa-solid fa-user"></i></a>
                     </li>
     
     
