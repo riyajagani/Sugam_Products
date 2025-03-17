@@ -31,10 +31,10 @@ if(isset($_POST['place_order'])) {
     $check_stmt->execute();
     $check_stmt->store_result();
     
-    if ($check_stmt->num_rows > 0) {
-        echo "Duplicate order detected. Order not placed.";
-        exit;
-    }
+    // if ($check_stmt->num_rows > 0) {
+    //     echo "Duplicate order detected. Order not placed.";
+    //     exit;
+    // }
 
     $conn->begin_transaction();
 
