@@ -184,6 +184,22 @@ p {
     text-align: center;
 }
 
+a.button {
+    display: inline-block;
+    background-color: darkorange; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: orange; /* Darker blue on hover */
+}
+
+
 .product {
     cursor: pointer;
     margin-bottom: 2rem;
@@ -328,6 +344,18 @@ button, .btn, .checkout-btn, .order-details-btn {
     flex-basis: 24%;
     cursor: pointer;
 }
+.product img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+.img-fluid {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+}
+
 
 .single-product input{
     width: 50px;

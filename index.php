@@ -24,31 +24,31 @@ include('header.php');
     <hr>
 </section>
 
-<section id="new" class="w-100 my-5 pb-5">
-    <div class="row p-0 m-0">
-        <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="falsa.png">
-            <div class="details">
-                <h2>Fruit-Juice Flavours</h2>
-                <button class="text-uppercase">BUY NOW</button>
+    <section id="new" class="w-100 my-5 pb-5">
+        <div class="row p-0 m-0">
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="falsa.png">
+                <div class="details">
+                    <h2>Fruit-Juice Flavours</h2>
+                    <button class="text-uppercase">BUY NOW</button>
+                </div>
             </div>
-        </div>
 
-        <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="ice-cream.png">
-            <div class="details">
-                <h2>Ice-Cream Flavours</h2>
-                <button class="text-uppercase">BUY NOW</button>
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="ice-cream.png">
+                <div class="details">
+                    <h2>Ice-Cream Flavours</h2>
+                    <button class="text-uppercase">BUY NOW</button>
+                </div>
             </div>
-        </div>
 
-        <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="soft-drink.png">
-            <div class="details">
-                <h2>Soft-Drink Flavours</h2>
-                <button class="text-uppercase">BUY NOW</button>
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="soft-drink.png">
+                <div class="details">
+                    <h2>Soft-Drink Flavours</h2>
+                    <button class="text-uppercase">BUY NOW</button>
+                </div>
             </div>
-        </div>
 
     </div>
 </section>

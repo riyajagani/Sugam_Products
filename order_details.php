@@ -61,7 +61,7 @@
                             </div>
                         </div>
                     </td>
-                    <td><span>Rupees <?php echo $row['product_price']; ?></span></td>
+                    <td><span>₹ <?php echo $row['product_price']; ?></span></td>
                     <td><span><?php echo $row['product_quantity']; ?></span></td>
                 </tr>
             <?php } ?>
