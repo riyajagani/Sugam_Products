@@ -40,7 +40,7 @@ else if (isset($_POST['edit_btn'])) {
     $image = $current_image; // Default to current image
 
     if (!empty($_FILES['image']['name'])) {
-        $target_dir = "../assets/imgs/";
+        $target_dir = "../uploads/products/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

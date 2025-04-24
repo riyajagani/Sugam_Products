@@ -1,7 +1,7 @@
 <?php
 
 include('server/connection.php');
- $stmt=$conn->prepare("SELECT * FROM products WHERE product_category = 'Fruit-Juice Flavours'");
+ $stmt=$conn->prepare("SELECT * FROM products WHERE product_category = 'Fruit Soda Flavour'");
  $stmt->execute();
  $products= $stmt->get_result();
 ?>
