@@ -591,3 +591,12 @@ th:last-child{
     width: 48%;
     margin: 10px auto;
 }
+
+.cart-quantity
+{
+    background-color: orange;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    margin: -2px;
+}
