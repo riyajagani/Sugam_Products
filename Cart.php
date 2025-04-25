@@ -49,10 +49,10 @@ function calculateTotalCart()
     $total_quantity=0;
     foreach ($_SESSION['Cart'] as $product) {
         $total += $product['product_price'] * $product['product_quantity'];
-        $total_quantity=$total_quantity + $ $quantity;
+       // $total_quantity=$total_quantity + $ $quantity;
     }
     $_SESSION['total'] = $total;
-    $_SESSION['quantity']=$total_quantity;
+   // $_SESSION['quantity']=$total_quantity;
 }
 ?>
 
