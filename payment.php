@@ -6,7 +6,7 @@ $apikey = 'rzp_test_PjxtEigHqqGsZm';
 $totalAmount = 0;
 if (isset($_SESSION['total']) && $_SESSION['total'] != 0) {
     $totalAmount = $_SESSION['total'];
-} else if (isset($_POST['order_status']) && $_POST['order_status'] == "not paid") {
+} if (isset($_POST['order_status']) && $_POST['order_status'] == "not paid") {
     $totalAmount = $_POST['order_total_price'];
 }
 ?>
