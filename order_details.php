@@ -15,6 +15,7 @@
             JOIN products ON order_items.product_id = products.product_id 
             WHERE order_items.order_id = ?
         ");
+        
 
         $stmt->bind_param('i', $order_id);
         $stmt->execute();
@@ -75,6 +76,7 @@
                  <input type="hidden" name="email" value="<?php echo $email; ?>">
                  <input type="hidden" name="phone" value="<?php echo $phone; ?>">
                  <button type="submit">Proceed to Payment</button>
+
             </form>
         <?php } ?> 
     </div>
