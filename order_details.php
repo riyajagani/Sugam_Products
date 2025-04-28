@@ -75,8 +75,7 @@
                 <input type="hidden" name="name" value="<?php echo $name; ?>">
                  <input type="hidden" name="email" value="<?php echo $email; ?>">
                  <input type="hidden" name="phone" value="<?php echo $phone; ?>">
-                 <button type="submit">Proceed to Payment</button>
-
+                 <input type="submit" class="btn checkout-btn" value="pay now" name="pay now">
             </form>
         <?php } ?> 
     </div>

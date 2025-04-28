@@ -122,13 +122,13 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             <li class="nav-item">
                 <a href="dashboard.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?>">
                     <i class="bi bi-speedometer2"></i>
-                    <span>Dashboard</span>
+                    <span>Orders</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="orders.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'orders.php' ? 'active' : ''; ?>">
                     <i class="bi bi-cart"></i>
-                    <span>Orders</span>
+                    <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">

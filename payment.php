@@ -6,7 +6,7 @@ $apikey = 'rzp_test_PjxtEigHqqGsZm';
 $totalAmount = 0;
 if (isset($_SESSION['total']) && $_SESSION['total'] != 0) {
     $totalAmount = $_SESSION['total'];
-} else if (isset($_POST['order_status']) && $_POST['order_status'] == "not paid") {
+} if (isset($_POST['order_status']) && $_POST['order_status'] == "not paid") {
     $totalAmount = $_POST['order_total_price'];
 }
 ?>
@@ -43,9 +43,9 @@ if (isset($_SESSION['total']) && $_SESSION['total'] != 0) {
             // Optionally, redirect or send data to backend for order confirmation
         },
         "prefill": {
-            "name": "<?php echo $_POST['name'] ?? ''; ?>",
-            "email": "<?php echo $_POST['email'] ?? ''; ?>",
-            "contact": "<?php echo $_POST['phone'] ?? ''; ?>"
+            "name": "<?php echo $_SESSION['name'] ?? ''; ?>",
+            "email": "<?php echo $_SESSION['email'] ?? ''; ?>",
+            "contact": "<?php echo $_SESSION['phone'] ?? ''; ?>"
         },
         "theme": {
             "color": "#0e90e4"

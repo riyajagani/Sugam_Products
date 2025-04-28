@@ -217,7 +217,7 @@ if (!$result) {
                                     <tr>
                                         <td><?php echo $product['product_id']; ?></td>
                                         <td>
-                                            <img src="<?php echo $product['product_image1']; ?>" alt="Product Image"
+                                            <img src="../<?php echo $product['product_image1']; ?>" alt="Product Image"
                                                 width="70" height="70" class="border">
                                         </td>
                                         <td><?php echo htmlspecialchars($product['product_name']); ?></td>

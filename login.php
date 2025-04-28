@@ -58,6 +58,7 @@ if(isset($_POST['login_btn'])){
                 </div>
                 <div class="form-group">
                     <a id="register-url" class="btn" href="register.php">Don't have an account? Register </a>
+                    <p><a id="register-url" class="btn" href="admin/login.php">Login as Admin? </a></p>
                 </div>
             </form>
         </div>
