@@ -8,21 +8,11 @@ include('header.php');
         <h5>NEW VARIETY</h5>
         <h1><span>BEST PRICES</span> FOR THIS SEASONS</h1>
         <p>Sugam Products offers the best products for the most affordable prices</p>
-        <button>SHOP NOW</button>
+        <button><a href="shop.php">SHOP NOW</a></button>
     </div>
 </section>
 
-<!--random-->
-<section id="product" class="container my-5 pb-5">
-    <div class="row">
-        <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="ice-cream.png">
-        <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="mixed.png">
-        <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="bag.png">
-        <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="whiskey.png">
 
-    </div>
-    <hr>
-</section>
 
     <section id="new" class="w-100 my-5 pb-5">
         <div class="row p-0 m-0">
@@ -85,12 +75,6 @@ include('header.php');
     <hr>
 </section>
 
-<section id="banner" class="my-5 py-5">
-    <div class="container">
-        <h4><span>SEASON's SALE</span> </h4>
-        <h1><span>Autumn Collection <br> UP to 15% OFF</span></h1>
-        <button class="text-uppercase">Shop Now</button>
-    </div>
-</section>
+
 
 <?php include('footer.php'); ?>

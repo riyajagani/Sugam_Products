@@ -25,10 +25,7 @@ if (isset($_POST['create_product'])) {
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_error = $_FILES['image']['error'];
 
-    // For debugging - uncomment to see what's happening
-    // echo "<pre>";
-    // print_r($_FILES);
-    // echo "</pre>";
+   
 
     if ($image_error === 0) {
         // Create unique image name
